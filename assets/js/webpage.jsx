@@ -3,6 +3,37 @@ import "/assets/css/webpage.css";
 
 function Webpage() {
 
+    const inputFontSizeHandler = (event) => {
+
+        let inputs = document.querySelectorAll("input")
+
+        for (const input of inputs) {
+
+            if (input.value.length === 3 ) {
+
+                input.style.cssText = "font-size: 30px;"
+                input.setAttribute("class", "threeValueInput")
+
+            }else if (input.value.length === 4 ) {
+
+                input.style.cssText = "font-size: 20px;"
+                input.setAttribute("class", "fourValueInput")
+
+            }else if (input.value.length >= 5 ) {
+
+                input.style.cssText = "font-size: 15px;"
+                input.setAttribute("class", "fiveOrMoreThanFiveValueInput")
+
+            }else if (input.value.length < 3 ) {
+
+                input.style.cssText = "font-size: 45px;"
+                input.removeAttribute("class")
+
+            }
+
+        }
+    }
+
     const startTimer = () => {
 
         let hoursInput = document.getElementById("hours");
@@ -55,6 +86,43 @@ function Webpage() {
                 secondsInput.value = "60"
 
             }
+
+            if (secondsInput.value.length ===3 || minutesInput.value.length ===3 || hoursInput.value.length ===3 ) {
+
+                for (const input of inputs) {
+
+                    input.style.cssText = "font-size: 30px;"
+                    input.setAttribute("class", "threeValueInput")
+
+                }
+            }else if ( secondsInput.value.length ===4 || minutesInput.value.length ===4 || hoursInput.value.length ===4 ) {
+
+                for (const input of inputs) {
+
+                    input.style.cssText = "font-size: 20px;"
+                    input.setAttribute("class", "fourValueInput")
+
+                }
+
+            }else if ( secondsInput.value.length >=5 || minutesInput.value.length >=5 || hoursInput.value.length >=5 ) {
+
+                for (const input of inputs) {
+
+                    input.style.cssText = "font-size: 15px;"
+                    input.setAttribute("class", "fiveOrMoreThanFiveValueInput")
+
+                }
+
+            }else if ( secondsInput.value.length <3 || minutesInput.value.length <3 || hoursInput.value.length <3 ) {
+
+                for (const input of inputs) {
+
+                    input.style.cssText = "font-size: 45px;"
+                    input.removeAttribute("class")
+
+                }
+
+            }        
 
             secondsInput.value--
 
@@ -143,10 +211,13 @@ function Webpage() {
             clearInterval(startTimerSetInterval)
 
             secondsInput.value = "";
+            secondsInput.innerHTML = "";
             
             minutesInput.value = "";
+            minutesInput.innerHTML = "";
             
             hoursInput.value = "";
+            hoursInput.innerHTML = "";
             
 
             startButton.disabled = false;
@@ -154,6 +225,8 @@ function Webpage() {
             for (const input of inputs) {
 
                 input.readOnly = false;
+                input.removeAttribute("class")
+                input.removeAttribute("style")
 
             };
 
@@ -175,21 +248,21 @@ function Webpage() {
                     <div className="hours">
 
                         <label htmlFor="hours">Hours</label>
-                        <input type="number" id="hours" placeholder="00" name="hours" maxLength={2} max={24} />
+                        <input type="number" id="hours" placeholder="00" name="hours" onChange={inputFontSizeHandler}/>
 
                     </div>
 
                     <div className="minutes">
 
                         <label htmlFor="minutes">Minutes</label>
-                        <input type="number" id="minutes" placeholder="00" name="minutes" maxLength={2} max={60} />
+                        <input type="number" id="minutes" placeholder="00" name="minutes" onChange={inputFontSizeHandler}/>
 
                     </div>
 
                     <div className="seconds">
 
                         <label htmlFor="seconds">Seconds</label>
-                        <input type="number" id="seconds" placeholder="00" name="seconds" maxLength={2} max={60} />
+                        <input type="number" id="seconds" placeholder="00" name="seconds" onChange={inputFontSizeHandler}/>
 
                     </div>
 
@@ -197,17 +270,17 @@ function Webpage() {
 
                 <div className="controlButtonsContainer">
 
-                    <button type="button" className="startButton" style={{ backgroundColor: "rgba(3, 174, 133, 1)", border: "1px solid rgba(3, 174, 133, 1)" }} onClick={startTimer}>START</button>
+                    <button type="submit" className="startButton" style={{ backgroundColor: "rgba(3, 174, 133, 1)", border: "1px solid rgba(3, 174, 133, 1)" }} onClick={startTimer} >START</button>
 
                     <button type="button" className="pauseButton" style={{ border: "1px solid rgba(209, 209, 209, 1)", backgroundColor: "rgba(234, 234, 234, 0)" }} >PAUSE</button>
 
-                    <button type="button" className="resetButton" style={{ backgroundColor: "rgba(253, 98, 89, 1)", border: "1px solid rgba(253, 98, 89, 1)" }}>RESET</button>
+                    <button type="reset" className="resetButton" style={{ backgroundColor: "rgba(253, 98, 89, 1)", border: "1px solid rgba(253, 98, 89, 1)" }}>RESET</button>
 
                 </div>
 
             </div>
 
-            <a href="https://github.com/favorodera" style={{color:"white", fontSize:"25px", marginBottom:"50px"}}>Codes By favorodera</a>
+            <a href="https://github.com/favorodera" style={{color:"white", fontSize:"25px"}}>Codes By favorodera</a>
 
         </>
     )
