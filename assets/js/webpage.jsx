@@ -9,22 +9,22 @@ function Webpage() {
 
         for (const input of inputs) {
 
-            if (input.value.length === 3 ) {
+            if (input.value.length === 3) {
 
                 input.style.cssText = "font-size: 30px;"
                 input.setAttribute("class", "threeValueInput")
 
-            }else if (input.value.length === 4 ) {
+            } else if (input.value.length === 4) {
 
                 input.style.cssText = "font-size: 20px;"
                 input.setAttribute("class", "fourValueInput")
 
-            }else if (input.value.length >= 5 ) {
+            } else if (input.value.length >= 5) {
 
                 input.style.cssText = "font-size: 15px;"
                 input.setAttribute("class", "fiveOrMoreThanFiveValueInput")
 
-            }else if (input.value.length < 3 ) {
+            } else if (input.value.length < 3) {
 
                 input.style.cssText = "font-size: 45px;"
                 input.removeAttribute("class")
@@ -54,7 +54,7 @@ function Webpage() {
 
             });
 
-        };
+        }
 
         if (secondsInput.value === "" && minutesInput.value === "" && hoursInput.value === "") {
 
@@ -62,7 +62,7 @@ function Webpage() {
             errorMessage.style.visibility = "visible";
 
             return
-        };
+        }
 
         let startTimerSetInterval = setInterval(() => {
 
@@ -87,7 +87,7 @@ function Webpage() {
 
             }
 
-            if (secondsInput.value.length ===3 || minutesInput.value.length ===3 || hoursInput.value.length ===3 ) {
+            if (secondsInput.value.length === 3 || minutesInput.value.length === 3 || hoursInput.value.length === 3) {
 
                 for (const input of inputs) {
 
@@ -95,7 +95,7 @@ function Webpage() {
                     input.setAttribute("class", "threeValueInput")
 
                 }
-            }else if ( secondsInput.value.length ===4 || minutesInput.value.length ===4 || hoursInput.value.length ===4 ) {
+            } else if (secondsInput.value.length === 4 || minutesInput.value.length === 4 || hoursInput.value.length === 4) {
 
                 for (const input of inputs) {
 
@@ -104,7 +104,7 @@ function Webpage() {
 
                 }
 
-            }else if ( secondsInput.value.length >=5 || minutesInput.value.length >=5 || hoursInput.value.length >=5 ) {
+            } else if (secondsInput.value.length >= 5 || minutesInput.value.length >= 5 || hoursInput.value.length >= 5) {
 
                 for (const input of inputs) {
 
@@ -113,7 +113,7 @@ function Webpage() {
 
                 }
 
-            }else if ( secondsInput.value.length <3 || minutesInput.value.length <3 || hoursInput.value.length <3 ) {
+            } else if (secondsInput.value.length < 3 || minutesInput.value.length < 3 || hoursInput.value.length < 3) {
 
                 for (const input of inputs) {
 
@@ -122,7 +122,7 @@ function Webpage() {
 
                 }
 
-            }        
+            }
 
             secondsInput.value--
 
@@ -175,7 +175,7 @@ function Webpage() {
                     hoursInput.value--;
                     minutesInput.value = "60"
 
-                };
+                }
 
                 minutesInput.value--;
                 secondsInput.value = "59";
@@ -212,13 +212,13 @@ function Webpage() {
 
             secondsInput.value = "";
             secondsInput.innerHTML = "";
-            
+
             minutesInput.value = "";
             minutesInput.innerHTML = "";
-            
+
             hoursInput.value = "";
             hoursInput.innerHTML = "";
-            
+
 
             startButton.disabled = false;
 
@@ -228,12 +228,12 @@ function Webpage() {
                 input.removeAttribute("class")
                 input.removeAttribute("style")
 
-            };
+            }
 
         });
 
     };
- 
+
 
     return (
         <>
@@ -248,21 +248,21 @@ function Webpage() {
                     <div className="hours">
 
                         <label htmlFor="hours">Hours</label>
-                        <input type="number" id="hours" placeholder="00" name="hours" onChange={inputFontSizeHandler}/>
+                        <input type="number" id="hours" placeholder="00" name="hours" onChange={inputFontSizeHandler} />
 
                     </div>
 
                     <div className="minutes">
 
                         <label htmlFor="minutes">Minutes</label>
-                        <input type="number" id="minutes" placeholder="00" name="minutes" onChange={inputFontSizeHandler}/>
+                        <input type="number" id="minutes" placeholder="00" name="minutes" onChange={inputFontSizeHandler} />
 
                     </div>
 
                     <div className="seconds">
 
                         <label htmlFor="seconds">Seconds</label>
-                        <input type="number" id="seconds" placeholder="00" name="seconds" onChange={inputFontSizeHandler}/>
+                        <input type="number" id="seconds" placeholder="00" name="seconds" onChange={inputFontSizeHandler} />
 
                     </div>
 
@@ -280,7 +280,7 @@ function Webpage() {
 
             </div>
 
-            <a href="https://github.com/favorodera" style={{color:"white", fontSize:"25px"}}>Codes By favorodera</a>
+            <a href="https://github.com/favorodera" style={{ color: "white", fontSize: "25px" }}>Codes By favorodera</a>
 
         </>
     )
