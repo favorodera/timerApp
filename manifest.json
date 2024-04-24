@@ -1,0 +1,19 @@
+{
+    "short_name": "TimerApp",
+    "name": "My Awesome Timer App",
+    "icons": [
+      {
+        "src": "./assets/media/myProfilePicture.jpg",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "./assets/media/myProfilePicture.jpg",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "index.html",
+    "theme_color": "#007bff",
+    "display": "standalone"
+  }
