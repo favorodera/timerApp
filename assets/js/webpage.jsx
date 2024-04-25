@@ -110,7 +110,7 @@ function Webpage() {
                 input.style.cssText = "font-size: 15px;"
 
                 if (darkMode === false) {
-                    input.classList.toggle("darkModeFiveOrMoreThanFiveValueInput")
+                    input.classList.toggle("lightModeFiveOrMoreThanFiveValueInput")
                 } else {
                     input.classList.toggle("darkModeFiveOrMoreThanFiveValueInput")
                 }
@@ -118,7 +118,13 @@ function Webpage() {
             } else if (input.value.length < 3) {
 
                 input.style.cssText = "font-size: 45px;"
-                input.classList.remove("darkModeFiveOrMoreThanFiveValueInput")
+
+                if (darkMode === false) {
+                    input.classList.remove("lightModeThreeValueInput", "lightModeFourValueInput", "lightModeFiveOrMoreThanFiveValueInput")
+                } else {
+                    input.classList.remove("darkModeThreeValueInput", "darkModeFourValueInput", "darkModeFiveOrMoreThanFiveValueInput")
+                }
+
 
             }
 
@@ -227,9 +233,9 @@ function Webpage() {
                     input.style.cssText = "font-size: 45px;"
 
                     if (darkMode === false) {
-                        input.classList.remove("lightModeThreeValueInput")
+                        input.classList.remove("lightModeThreeValueInput", "lightModeFourValueInput", "lightModeFiveOrMoreThanFiveValueInput")
                     } else {
-                        input.classList.remove("darkModeThreeValueInput")
+                        input.classList.remove("darkModeThreeValueInput", "darkModeFourValueInput", "darkModeFiveOrMoreThanFiveValueInput")
                     }
                 }
 
