@@ -12,10 +12,44 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     min-height: 100vh;
     background-color: rgba(1, 19, 30, 1);
-    gap: 100px;
+    gap: 34px;
+}
+
+.themeChangerAndGithubIconsContainer{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+    margin-top: 22px;
+    margin-right: 36px;
+}
+
+.githubIconContainer{
+    width: 20px;
+    height: 20px;
+    background-color: rgba(0, 39, 63, 1);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.themeChangerIconContainer{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 39, 63, 1);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }
 
 .timerContainer {
@@ -68,7 +102,7 @@ label {
     color: rgba(255, 255, 255, 1);
 }
 
-input {
+.darkModeInput {
     width: 55px;
     min-height: 59px;
     padding: 0px 27px;
@@ -82,28 +116,67 @@ input {
     text-align: center;
 }
 
-input::placeholder {
+.lightModeInput {
+    width: 55px;
+    min-height: 59px;
+    padding: 0px 27px;
+    font-size: 45px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+    outline: none;
+    border: 1px solid rgba(219, 219, 219, 1);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 1);
+    text-align: center;
+}
+
+.darkModeInput::placeholder {
     font-size: 45px;
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
 }
 
-.threeValueInput::placeholder{
+.lightModeInput::placeholder{
+    font-size: 45px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+}
+
+.darkModeThreeValueInput::placeholder{
     font-size: 30px;
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
 }
 
-.fourValueInput::placeholder{
+.lightModeThreeValueInput::placeholder{
+    font-size: 30px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1)
+}
+
+.darkModeFourValueInput::placeholder{
     font-size: 20px;
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
 }
 
-.fiveOrMoreThanFiveValueInput::placeholder{
+.lightModeFourValueInput::placeholder{
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
+}
+
+
+.darkModeFiveOrMoreThanFiveValueInput::placeholder{
     font-size: 15px;
     font-weight: 400;
     color: rgba(255, 255, 255, 1);
+}
+
+.lightModeFiveOrMoreThanFiveValueInput::placeholder{
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 1);
 }
 
 input::-webkit-inner-spin-button {
@@ -134,7 +207,7 @@ input::-webkit-inner-spin-button {
 
 @media only screen and (max-width: 433px) {
     .timerContainer {
-        width: 310px;
+        width: 320px;
     }
 
     .timerInputsContainer {
@@ -155,7 +228,7 @@ input::-webkit-inner-spin-button {
         gap: 12px;
     }
 
-    input {
+    .lightModeInput, .darkModeInput{
         width: 55px;
         height: 59px;
         padding: 0px 10px;
