@@ -183,10 +183,6 @@ input::-webkit-inner-spin-button {
     display: none;
 }
 
-input{
-  -moz-appearance: none;
-}
-
 .controlButtonsContainer {
     height: 40px;
     width: 384px;
